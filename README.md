@@ -1,4 +1,4 @@
-# FSCapstone
+# Employee Management System
 
 Employee Management System
 "This project is an Employee Management System designed to manage employee records and track attendance efficiently. It features a user-friendly interface and provides essential functionalities such as adding, updating, removing, and viewing employee details."
