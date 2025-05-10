@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Error - XYZ Company</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f0f0f0;
+            text-align: center;
+        }
+        
+        .error-message {
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            margin-bottom: 20px;
+        }
+
+        h2 {
+            color: red;
+        }
+
+        button {
+            padding: 10px 20px;
+            background-color: #00aaff;
+            border: none;
+            border-radius: 4px;
+            color: white;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #0077cc;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="error-message">
+        <h2>Invalid Username or Password</h2>
+        <p>Please try logging in again.</p>
+    </div>
+    
+    <div>
+        <button onclick="location.href='loginpage.jsp'">Login</button>
+        <button onclick="location.href='index.html'">Home</button>
+    </div>
+
+</body>
+</html>

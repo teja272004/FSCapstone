@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Manage Employees</title>
+</head>
+<body class="bg-gray-900 text-white">
+    <div class="flex flex-col justify-center items-center h-screen">
+        <h1 class="text-4xl font-bold mb-8">Manage Employees</h1>
+        <div class="flex flex-col gap-4">
+            <button onclick="window.location.href='add_employee.html'" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+                Add Employee
+            </button>
+            <button onclick="window.location.href='update_employee.html'" class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded">
+                Update Employee
+            </button>
+            <button onclick="window.location.href='remove_employee.html'" class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded">
+                Remove Employee
+            </button>
+            <button onclick="window.location.href='view_employee.html'" class="bg-purple-500 hover:bg-purple-700 text-white font-bold py-2 px-4 rounded">
+                View Employees
+            </button>
+            <!-- Attendance Button -->
+            <button onclick="window.location.href='attendance.html'" class="bg-yellow-500 hover:bg-yellow-700 text-white font-bold py-2 px-4 rounded mt-4">
+                Attendance
+            </button>
+            <!-- Logout Button -->
+            <button onclick="window.location.href='LogoutServlet'" class="bg-gray-600 hover:bg-gray-800 text-white font-bold py-2 px-4 rounded mt-4">
+                Logout
+            </button>
+        </div>
+    </div>
+    <footer class="bg-gray-800 text-center p-4">
+        <p>&copy; 2024 Employee Management System</p>
+    </footer>
+</body>
+</html>

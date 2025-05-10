@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>View Employees</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css">
+</head>
+<body class="bg-gray-100">
+    <div class="container mx-auto p-6">
+        <h1 class="text-3xl font-bold mb-4">Employee List</h1>
+        
+        <!-- Button to go back to Manage Employees -->
+        <div class="mb-4">
+            <a href="manage.html" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+                Back to Manage Employees
+            </a>
+        </div>
+        
+        <table class="min-w-full bg-white border border-gray-300 shadow-lg">
+            <thead class="bg-gray-800 text-white">
+                <tr>
+                    <th class="border border-gray-300 px-4 py-2">ID</th>
+                    <th class="border border-gray-300 px-4 py-2">Name</th>
+                    <th class="border border-gray-300 px-4 py-2">Email</th>
+                    <th class="border border-gray-300 px-4 py-2">Phone</th>
+                    <th class="border border-gray-300 px-4 py-2">Job</th>
+                    <th class="border border-gray-300 px-4 py-2">Salary</th>
+                    <th class="border border-gray-300 px-4 py-2">Username</th>
+                    <th class="border border-gray-300 px-4 py-2">Password</th>
+                </tr>
+            </thead>
+            <tbody id="employeeTable" class="text-center">
+                <!-- Employee data will be inserted here -->
+            </tbody>
+        </table>
+    </div>
+
+    <script>
+        // Fetch employees from the server
+        fetch('EmployeeServlet')
+            .then(response => response.text())
+            .then(data => {
+                const employeeTable = document.getElementById('employeeTable');
+                const rows = data.trim().split('\n'); // Split the plain text data by lines
+                rows.forEach(row => {
+                    const cols = row.split(', '); // Split each line by comma
+                    employeeTable.innerHTML += `
+                        <tr class="border-b hover:bg-gray-100 transition duration-300">
+                            <td class="border border-gray-300 px-4 py-2">${cols[0].split(': ')[1]}</td>
+                            <td class="border border-gray-300 px-4 py-2">${cols[1].split(': ')[1]}</td>
+                            <td class="border border-gray-300 px-4 py-2">${cols[2].split(': ')[1]}</td>
+                            <td class="border border-gray-300 px-4 py-2">${cols[3].split(': ')[1]}</td>
+                            <td class="border border-gray-300 px-4 py-2">${cols[4].split(': ')[1]}</td>
+                            <td class="border border-gray-300 px-4 py-2">${parseFloat(cols[5].split(': ')[1]).toFixed(2)}</td>
+                            <td class="border border-gray-300 px-4 py-2">${cols[6].split(': ')[1]}</td>
+                            <td class="border border-gray-300 px-4 py-2">${cols[7].split(': ')[1]}</td>
+                        </tr>
+                    `;
+                });
+            })
+            .catch(error => console.error('Error fetching employee data:', error));
+    </script>
+</body>
+</html>
